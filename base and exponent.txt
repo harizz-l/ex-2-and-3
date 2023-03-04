@@ -1,0 +1,26 @@
+#include<stdio.h>
+double power(double base, int exponent);
+int main(){
+double base;
+int exponent;
+printf("enter the base number");
+scanf("%lf",&base);
+printf("enter the exponent");
+scanf("%d",&exponent);
+double result=power(base,exponent);
+
+printf("%lf to the power of %d is %lf\n", base,exponent, result);
+return 0;
+}
+double power(double base,int exponent)
+{
+if(exponent==0){
+return 1;
+}
+else if(exponent>0){
+return base*power(base,exponent-1);
+}
+else{
+return 1/(base*power(base,exponent-1));
+}
+}
